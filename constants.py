@@ -1,18 +1,18 @@
 # Connection details for communicating with the printer's moonraker API.
-HOST = '192.168.1.114'
+HOST = '192.168.0.17'
 WS_PORT = 7125
 
 # This will print a calibrated + control pattern and measure the % improvement after tuning
 VALIDATE_RESULTS = True
 
 # Print settings
-BUILD_PLATE_TEMPERATURE = 110
-HOTEND_TEMPERATURE = 255
+BUILD_PLATE_TEMPERATURE = 60    
+HOTEND_TEMPERATURE = 205
 HOTEND_IDLE_TEMP = 200
 
 # This is where the toolhead moves to indicate that it's done printing the PA pattern.
 FINISHED_X = 30
-FINISHED_Y = 250
+FINISHED_Y = 230
 
 # Any gcode you want to be sent before the pattern is printed.
 # You could just have this call PRINT_START if you've configured
@@ -22,22 +22,20 @@ M104 S180; preheat nozzle while waiting for build plate to get to temp
 M140 S{BUILD_PLATE_TEMPERATURE};
 G28
 M190 S{BUILD_PLATE_TEMPERATURE};
-QUAD_GANTRY_LEVEL
-CLEAN_NOZZLE
-G28 Z
 M109 S{HOTEND_TEMPERATURE};
-CLEAN_NOZZLE
+G1 Z0.2
+
 """
 
 # Information about the USB camera mounted to the hotend.
-VIDEO_DEVICE = "/dev/video2"
-VIDEO_RESOLUTION = "1280x720"
+VIDEO_DEVICE = "/dev/video0 "
+VIDEO_RESOLUTION = "640x480"
 FRAMERATE = "30"
 # The camera's distance from the nozzle.
 # This tells the recording code how to center the line within the camera's field of view.
 # The offsets are in mm.
 CAMERA_OFFSET_X = 28
-CAMERA_OFFSET_Y = 50.2
+CAMERA_OFFSET_Y = 58.05
 
 # This is the height where the camera and laser are in focus.
 LASER_FOCUS_HEIGHT = 17.86
