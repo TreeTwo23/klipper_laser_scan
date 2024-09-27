@@ -15,7 +15,10 @@ from pprint import pprint
 PA_START_VALUE = 0
 PA_STOP_VALUE = 0.06
 
-def generate_pa_results_for_pattern(pattern_info: PatternInfo)-> list[PaResult]:
+from typing import List
+
+def generate_pa_results_for_pattern(pattern_info: PatternInfo) -> List[PaResult]:
+
     results = []
 
     # Hardcoding a buffer distance of 3mm here for now.  Adjust if needed.
