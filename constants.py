@@ -3,12 +3,12 @@ HOST = '192.168.0.17'
 WS_PORT = 7125
 
 # This will print a calibrated + control pattern and measure the % improvement after tuning
-VALIDATE_RESULTS = True
+VALIDATE_RESULTS = False
 
 # Print settings
 BUILD_PLATE_TEMPERATURE = 60    
-HOTEND_TEMPERATURE = 205
-HOTEND_IDLE_TEMP = 200
+HOTEND_TEMPERATURE = 190
+HOTEND_IDLE_TEMP = 190
 
 # This is where the toolhead moves to indicate that it's done printing the PA pattern.
 FINISHED_X = 30
@@ -28,17 +28,17 @@ G1 Z0.2
 """
 
 # Information about the USB camera mounted to the hotend.
-VIDEO_DEVICE = "/dev/video0 "
+VIDEO_DEVICE = "USB 2.0 Camera"
 VIDEO_RESOLUTION = "640x480"
 FRAMERATE = "30"
 # The camera's distance from the nozzle.
 # This tells the recording code how to center the line within the camera's field of view.
 # The offsets are in mm.
-CAMERA_OFFSET_X = 28
-CAMERA_OFFSET_Y = 58.05
+CAMERA_OFFSET_X = 23
+CAMERA_OFFSET_Y = 62.05
 
 # This is the height where the camera and laser are in focus.
-LASER_FOCUS_HEIGHT = 17.86
+LASER_FOCUS_HEIGHT = 11.700
 
 # How the processing code finds the area of interest. Units are in pixels.
 # The crop offsets specify the pixel that the box should be centered on.
